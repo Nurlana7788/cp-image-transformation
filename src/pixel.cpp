@@ -27,6 +27,11 @@ Color Pixel::getColor() const{
     return _col;
 }
 
+int Pixel::brightness() const{
+    // Brightness is average of RGB components
+    return (_col.red() + _col.green() + _col.blue()) / 3;
+}
+
 void Pixel::setColor(Color c){
     _col = c;
 }

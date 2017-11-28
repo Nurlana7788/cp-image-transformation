@@ -19,10 +19,7 @@ BrightnessHistogram::BrightnessHistogram(const Image &a) :
     // Iterate through each pixel to find brightness value
     for(int i = 0; i < a.getHeight(); ++i){
         for(int j = 0; j < a.getWidth(); ++j){
-            // Brightness is average of RGB components
-            Color temp = a[i][j].getColor();
-            int brightness = (temp.red() + temp.green() + temp.blue()) / 3;
-            _frequency[brightness]++;
+            _frequency[a[i][j].brightness()]++;
         }
     }
 }

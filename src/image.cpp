@@ -133,6 +133,39 @@ void Image::writeTo(const char *fileName){
     out.close();
 }
 
+Image Image::verticalReflection() const{
+    // Create copy of current image
+    // This image will be transformed into reflection
+    Image reflection(*this);
+
+    // For vertical reflection we can directly swap rows
+    for(int i = 0, j = _height - 1; i < _height / 2; ++i, --j){
+        Pixel *temp = reflection._pix[i];
+        reflection._pix[i] = reflection._pix[j];
+        reflection._pix[j] = temp;
+    }
+
+    return reflection;
+}
+
+Image Image::horizontalReflection() const{
+    // Create copy of current image
+    // This image will be transformed into reflection
+    Image reflection(*this);
+
+    // We iterate through half the pixels and swap
+    // them appropriately
+    for(int i = 0; i < _height; ++i){
+        for(int j = 0, k = _width - 1; j < _width / 2; ++j, --k){
+            Pixel temp = reflection._pix[i][j];
+            reflection._pix[i][j] = reflection._pix[i][k]; 
+            reflection._pix[i][k] = temp;
+        }
+    }
+
+    return reflection;
+}
+
 Image& Image::operator=(const Image &a){
     // Deallocate the current pixel objects
     _deallocatePix();

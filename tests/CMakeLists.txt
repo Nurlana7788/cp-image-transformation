@@ -7,3 +7,6 @@ target_link_libraries(composite_image src)
 
 add_executable(histogram brightness_histogram_test.cpp)
 target_link_libraries(histogram src)
+
+add_executable(reflection reflection.cpp)
+target_link_libraries(reflection src)

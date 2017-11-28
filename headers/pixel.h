@@ -18,6 +18,7 @@ public:
 
     // Methods, Getters and Setters
     Color getColor() const;
+    int brightness() const;
     void setColor(Color c);
     void setColor(float red, float green, float blue);    
     void setPosition(int x, int y);

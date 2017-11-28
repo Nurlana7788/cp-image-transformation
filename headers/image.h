@@ -51,6 +51,18 @@ public:
     // format
     void writeTo(const char *fileName);
 
+    // Returns new image that is the reflection
+    // of the curent image along the height
+    // i.e. the topmost row becomes the last one
+    // and so on.
+    Image verticalReflection() const;
+
+    // Returns new image that is the reflection
+    // of the curent image along the width
+    // i.e. the first column becomes the last one
+    // and so on.
+    Image horizontalReflection() const;
+
     // Operator Overloads
     Image& operator=(const Image &a);
     Image& operator+=(const Image &a);
