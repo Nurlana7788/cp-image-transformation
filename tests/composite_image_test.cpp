@@ -1,5 +1,5 @@
-#include "headers/composite_image.h"
-#include "headers/image.h"
+#include "composite_image.h"
+#include "image.h"
 #include<fstream>
 #include<stdlib.h>
 #include<iostream>
