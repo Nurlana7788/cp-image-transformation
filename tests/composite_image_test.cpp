@@ -1,6 +1,5 @@
 #include "composite_image.h"
 #include "image.h"
-#include<fstream>
 #include<stdlib.h>
 #include<iostream>
 

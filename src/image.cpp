@@ -14,7 +14,6 @@
 Image::Image(){
     _width = 0;
     _height = 0;
-    _maxColorVal = 0;
     _pix = NULL;
 }
 
@@ -38,10 +37,8 @@ Image::Image(const char *fileName){
     imfile>>magicNumber;
     if(magicNumber != "P3"){
         // If not P3 set to default
-        std::cout<<"Hello";
         _width = 0;
         _height = 0;
-        _maxColorVal = 0;
         _pix = NULL;
 
         return;
@@ -56,8 +53,6 @@ Image::Image(const char *fileName){
 Image::Image(int width, int height){
     _width = width;
     _height = height;
-    // The default is set to 255
-    _maxColorVal = 255;
 
     // Allocate an array of Pixel pointers
     // This gives the height dimension
@@ -75,6 +70,23 @@ Image::Image(int width, int height){
     }
 }
 
+int Image::getMaxColorVal() const{
+    float maxCol = 0;
+
+    for(int i = 0; i < _height; ++i){
+        for(int j = 0; j < _width; ++j){
+            Color temp = _pix[i][j].getColor();
+           
+            maxCol = std::max(
+                std::max(maxCol, temp.red()),
+                std::max(temp.green(), temp.blue())
+            );
+        }
+    }
+
+    return maxCol;
+}
+
 // Destructor
 Image::~Image(){
     // Cleaning up allocated memory
@@ -84,7 +96,6 @@ Image::~Image(){
 Image::Image(const Image &a){
     _width = a._width;
     _height = a._height;
-    _maxColorVal = a._maxColorVal;
 
     // Create a new set of pixel objects for this object
     // such that the values of the pixels are equal to the
@@ -107,10 +118,6 @@ int Image::getHeight() const{
     return _height;
 }
 
-int Image::getMaxColorVal() const{
-    return _maxColorVal;
-}
-
 void Image::writeTo(const char *fileName){
     // Open stream for writing into
     // file
@@ -118,7 +125,7 @@ void Image::writeTo(const char *fileName){
 
     out<<"P3\n";
     out<<_width<<' '<<_height<<'\n';
-    out<<(int)_maxColorVal<<'\n';
+    out<<getMaxColorVal()<<'\n';
     // Use overloaded << operator of Image
     // to write pixel values
     out<<(*this);
@@ -132,7 +139,6 @@ Image& Image::operator=(const Image &a){
 
     _width = a._width;
     _height = a._height;
-    _maxColorVal = a._maxColorVal;
 
     // Allocate a new set of pixel objects
     // such that the corresponding values are
@@ -178,7 +184,8 @@ std::ostream& operator<<(std::ostream &os, const Image &a){
 // To read an image form a P3 encoded image use the
 // image constructor instead
 std::istream& operator>>(std::istream &is, Image &a){
-    is>>a._width>>a._height>>a._maxColorVal;
+    int maxColorVal;
+    is>>a._width>>a._height>>maxColorVal;
 
     a._pix = new Pixel*[a._height];
     for(int i = 0; i < a._height; ++i){
@@ -203,14 +210,6 @@ Image& Image::operator+=(const Image &a){
             // Make use of pixel's operator
             // overlaoding
             _pix[i][j] += a._pix[i][j];
-
-            Color temp = _pix[i][j].getColor();
-
-            // Update maxColorVal
-            _maxColorVal = std::max(
-                std::max(_maxColorVal, temp.red()),
-                std::max(temp.green(), temp.blue())
-            );
         }
     }
 
@@ -233,8 +232,6 @@ Image& Image::operator*=(float a){
             _pix[i][j] *= a;
         }
     }
-
-    _maxColorVal *= a;
 
     return (*this);
 }

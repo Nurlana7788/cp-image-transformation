@@ -5,7 +5,6 @@
 
 // Call the Image copy constructor to create the object
 // We use operator overloading to simplify the code
-// 
 CompositeImage::CompositeImage(const Image &a, const Image &b, float alpha) :
     Image((a * (1 - alpha)) + (alpha * b))
 {
@@ -14,5 +13,13 @@ CompositeImage::CompositeImage(const Image &a, const Image &b, float alpha) :
 
 // Default Constructor
 CompositeImage::CompositeImage(){
+
+}
+
+// Copy Constructor
+// Use base class constructor for copying
+CompositeImage::CompositeImage(const CompositeImage &a) :
+    Image(a)
+{
 
 }
