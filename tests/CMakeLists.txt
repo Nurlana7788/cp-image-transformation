@@ -10,3 +10,6 @@ target_link_libraries(histogram src)
 
 add_executable(reflection reflection.cpp)
 target_link_libraries(reflection src)
+
+add_executable(task5 task5.cpp)
+target_link_libraries(task5 src)

@@ -37,7 +37,7 @@ Image BrightnessHistogram::outputHistogram(int window, int scaleHeight, bool mar
     Image histogram(_frequency.size(), heightOfImage);
 
     // Some color constants
-    const Color BLACK(0, 0, 0), WHITE(255, 255, 255), RED(255, 0, 0);
+    const Color BLACK(0, 0, 0), BLUE(0, 0, 255), WHITE(255, 255, 255), RED(255, 0, 0);
 
     // Iterate throught the pixels of the histogram
     // and color them appropriately
@@ -58,7 +58,12 @@ Image BrightnessHistogram::outputHistogram(int window, int scaleHeight, bool mar
         std::vector<int> thresholds(getThresholds(window));
         for(int i = 0; i < heightOfImage; ++i){
             for(int j = 0; j < thresholds.size(); ++j){
-                histogram[i][thresholds[j]].setColor(RED);
+                if(i <= heightOfImage - (_frequency[thresholds[j]] / scaleHeight)){
+                    histogram[i][thresholds[j]].setColor(BLUE);
+                }
+                else{
+                    histogram[i][thresholds[j]].setColor(RED);
+                }
             }
         }
     }
