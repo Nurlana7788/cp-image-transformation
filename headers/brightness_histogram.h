@@ -15,23 +15,27 @@ public:
 
     // Takes an image and constructs the brightness
     // histogram for it
-    BrightnessHistogram(const Image &a);
+    BrightnessHistogram(const Image &a, int smoothFactor = 0);
 
     // Returns an image of the histogram i.e. this function
     // can be used to visualize the hisotgram through an image
     // Parameters:
-    //      window: The size of the window for which minimum is checked
     //      scaleHeight: The ratio of frequency to pixel
+    //      window: The size of the window for which minimum is checked
+    //      lowerboundminima: frequencies lower than or equal to this 
+    //                        will be ignored when taking minima
     //      markThresholds: True if the threshholds should be marked in the image
     //                      using a red line
-    Image outputHistogram(int window = 10, int scaleHeight = 10, bool markThresholds = true) const;
+    Image outputHistogram(int scaleHeight = 10, int window = 10, int lowerBoundMinima = 0, bool markThresholds = true) const;
 
     // Returns a vector which contains the threshold values.
     // The values of the vecotr correspond to the brightness values
     // at which local minimum occurs
     // Parameters:
     //      window: The size of the window for which minimum is checked
-    std::vector<int> getThresholds(int window = 10) const;
+    //      lowerboundminima: frequencies lower than or equal to this 
+    //                        will be ignored when taking minima
+   std::vector<int> getThresholds(int window = 10, int lowerBoundMinima = 0) const;
 
     // Returns the frequency counts of brightness.
     // The frequency values correspond to brightness

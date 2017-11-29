@@ -166,6 +166,27 @@ Image Image::horizontalReflection() const{
     return reflection;
 }
 
+Image Image::getBinaryImage(int threshold, Color lower, Color higher) const{
+    // binary will be transformed into binary image
+    Image binary(getWidth(), getHeight());
+
+    // Iterate through pixels, find brightness
+    // if brightness is lower than threshold set color to lower
+    // else set it to higher
+    for(int i = 0; i < getHeight(); ++i){
+        for(int j = 0; j < getWidth(); ++j){
+            if(_pix[i][j].brightness() > threshold){
+                binary[i][j].setColor(higher);
+            }
+            else{
+                binary[i][j].setColor(lower);
+            }
+        }
+    }
+
+    return binary;
+}
+
 Image& Image::operator=(const Image &a){
     // Deallocate the current pixel objects
     _deallocatePix();

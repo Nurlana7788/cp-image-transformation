@@ -4,6 +4,7 @@
 #include<iostream>
 
 class Pixel;
+class Color;
 
 class Image{
     int _width, _height;
@@ -62,6 +63,11 @@ public:
     // i.e. the first column becomes the last one
     // and so on.
     Image horizontalReflection() const;
+
+    // Returns a new image that consists of only two colours.
+    // All pixels that have bightness more than threshold are
+    // coloured "higher" and the remaining are coloured "lower"
+    Image getBinaryImage(int threshold, Color lower, Color higher) const;
 
     // Operator Overloads
     Image& operator=(const Image &a);
