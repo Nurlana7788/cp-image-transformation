@@ -1,7 +1,7 @@
-#include "brightness_histogram.h"
-#include "image.h"
-#include "pixel.h"
-#include "color.h"
+#include "image/brightness_histogram.h"
+#include "image/image.h"
+#include "image/pixel.h"
+#include "image/color.h"
 #include<algorithm>
 #include<vector>
 

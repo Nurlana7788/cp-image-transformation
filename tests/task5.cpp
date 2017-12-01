@@ -1,8 +1,8 @@
-#include "color.h"
-#include "pixel.h"
-#include "image.h"
-#include "brightness_histogram.h"
-#include "composite_image.h"
+#include "image/color.h"
+#include "image/pixel.h"
+#include "image/image.h"
+#include "image/brightness_histogram.h"
+#include "image/composite_image.h"
 #include<vector>
 #include<algorithm>
 

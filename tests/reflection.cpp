@@ -1,4 +1,4 @@
-#include "image.cpp"
+#include "image/image.cpp"
 
 int main(int argv, char *argc[]){
     Image a(argc[1]);

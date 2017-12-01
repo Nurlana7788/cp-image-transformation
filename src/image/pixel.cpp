@@ -1,5 +1,5 @@
-#include "pixel.h"
-#include "color.h"
+#include "image/pixel.h"
+#include "image/color.h"
 #include<iostream>
 
 Pixel::Pixel(){

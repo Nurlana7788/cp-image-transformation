@@ -1,8 +1,8 @@
-#include "brightness_histogram.h"
-#include "composite_image.h"
-#include "scaled_image.h"
-#include "color.h"
-#include "image.h"
+#include "image/brightness_histogram.h"
+#include "image/composite_image.h"
+#include "image/scaled_image.h"
+#include "image/color.h"
+#include "image/image.h"
 #include<stdlib.h>
 
 void task7(Image const &a){

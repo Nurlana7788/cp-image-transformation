@@ -1,6 +1,6 @@
-#include "image.h"
-#include "color.h"
-#include "pixel.h"
+#include "image/image.h"
+#include "image/color.h"
+#include "image/pixel.h"
 #include<fstream>
 #include<string>
 #include<algorithm>

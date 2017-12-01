@@ -1,8 +1,8 @@
-#include "scaled_image.h"
-#include "composite_image.h"
-#include "image.h"
-#include "pixel.h"
-#include "color.h"
+#include "image/scaled_image.h"
+#include "image/composite_image.h"
+#include "image/image.h"
+#include "image/pixel.h"
+#include "image/color.h"
 
 //default constructor,sets the ppm to white
 ScaledImage::ScaledImage():Image(){

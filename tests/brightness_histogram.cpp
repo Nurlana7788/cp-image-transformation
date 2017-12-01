@@ -1,5 +1,5 @@
-#include "brightness_histogram.h"
-#include "image.h"
+#include "image/brightness_histogram.h"
+#include "image/image.h"
 
 int main(int argv, char *argc[]){
     Image a(argc[1]);

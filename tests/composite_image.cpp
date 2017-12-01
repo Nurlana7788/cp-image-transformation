@@ -1,5 +1,5 @@
-#include "composite_image.h"
-#include "image.h"
+#include "image/composite_image.h"
+#include "image/image.h"
 #include<stdlib.h>
 #include<iostream>
 

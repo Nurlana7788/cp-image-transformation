@@ -1,7 +1,7 @@
-#include "composite_image.h"
-#include "image.h"
-#include "pixel.h"
-#include "color.h"
+#include "image/composite_image.h"
+#include "image/image.h"
+#include "image/pixel.h"
+#include "image/color.h"
 
 // Call the Image copy constructor to create the object
 // We use operator overloading to simplify the code
