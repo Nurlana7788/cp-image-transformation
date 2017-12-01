@@ -1,20 +1,20 @@
 # Group 3
 
 ## Members:
-    1. IMT2015513
-    2. IMT2016026
-    3. IMT2016054
-    4. IMT2016077
-    5. IMT2016097
-    6. IMT2016116
+    1. IMT2015513 - Manoj Kulkarni
+    2. IMT2016026 - Manideep Nizam
+    3. IMT2016054 - Aditya Shridhar Hegde
+    4. IMT2016077 - Ashish Singh
+    5. IMT2016097 - Hrishikesh Reddy
+    6. IMT2016116 - Sushma Bhandaru
 
 ## Individual Contribution
 
 RollNumber      Name                    Task    Contribution
 
-IMT2015513      Manoj Kulakarni         3       -
+IMT2015513      Manoj Kulakrni         3       -
 
-IMT2016026      Manideep                6       Connected Components class
+IMT2016026      Manideep Nizam          6       Connected Components class
                                                 Tests for task 6
                                                 Task6 class
 
@@ -28,7 +28,7 @@ IMT2016077      Ashish Singh            8       Noise class
                                                 Tests for task 8
                                                 Task8 class
 
-IMT2016097      Hrishikesh              2       -
+IMT2016097      Hrishikesh Reddy        2       -
 
 IMT2016116      Sushma Bhandaru         7       ScaledImage class
                                                 Tests for task 7

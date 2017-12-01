@@ -9,6 +9,7 @@
 int main(int argv, char *argc[]){
     if(argv < 2){
         std::cout<<"Please provide image file as input.\n";
+        return 0;
     }
 
     // Read image from file
@@ -21,10 +22,10 @@ int main(int argv, char *argc[]){
         &defObject, // 2
         &defObject, // 3
         &defObject, // 4
-        new Task5("output/5_IMT2016054.ppm"), // 5
-        new Task6("output/6_IMT2016026.ppm"), // 6
-        new Task7("output/7_IMT2016116.ppm"), // 7
-        new Task8("output/8_IMT2016077.ppm") // 6
+        new Task5("output/output_task5_imt2016054.ppm"), // 5
+        new Task6("output/output_task6_imt2016026.ppm"), // 6
+        new Task7("output/output_task7_imt2016116.ppm"), // 7
+        new Task8("output/output_task8_imt2016077.ppm") // 8
     };
 
     int taskIdList[] = {2, 3, 5, 6, 7, 8};
