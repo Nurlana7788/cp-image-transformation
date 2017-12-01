@@ -18,7 +18,7 @@ CompositeImage::CompositeImage(){
 
 // Copy Constructor
 // Use base class constructor for copying
-CompositeImage::CompositeImage(const CompositeImage &a) :
+CompositeImage::CompositeImage(const Image &a) :
     Image(a)
 {
 
@@ -26,4 +26,21 @@ CompositeImage::CompositeImage(const CompositeImage &a) :
 
 CompositeImage::~CompositeImage(){
 
+}
+
+CompositeImage CompositeImage::whiteSubstitution(const Image &a, const Image &b){
+    // Will contain result
+    CompositeImage res(a);
+    const Color WHITE(255, 255, 255);
+
+    for(int i = 0; i < res.getHeight(); ++i){
+        for(int j = 0; j < res.getWidth(); ++j){
+            // If color is white replace it with b's color
+            if(res[i][j].getColor() == WHITE){
+                res[i][j].setColor(b[i][j].getColor());
+            }
+        }
+    }
+
+    return res;
 }
