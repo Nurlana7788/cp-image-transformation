@@ -1,6 +1,6 @@
 include_directories (${CppProject_SOURCE_DIR}/headers)
 add_library(
-    src
+    image
         color.cpp 
         pixel.cpp
         image.cpp
