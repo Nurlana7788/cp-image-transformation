@@ -23,3 +23,7 @@ CompositeImage::CompositeImage(const CompositeImage &a) :
 {
 
 }
+
+CompositeImage::~CompositeImage(){
+
+}

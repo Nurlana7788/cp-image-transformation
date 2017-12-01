@@ -15,6 +15,9 @@ public:
 
     // Copy Constructor
     CompositeImage(const CompositeImage &a);
+
+    // Virtual destructor
+    virtual ~CompositeImage();
 };
 
 #endif

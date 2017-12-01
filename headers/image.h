@@ -31,6 +31,10 @@ public:
     // through the default Pixel constructor
     Image(int width, int height);
 
+    // Populate the image with the color
+    // passed as argument
+    Image(int width, int height, Color fill);
+
     // Destructor for Image
     virtual ~Image();
 

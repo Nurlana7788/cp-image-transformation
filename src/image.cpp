@@ -70,6 +70,27 @@ Image::Image(int width, int height){
     }
 }
 
+Image::Image(int width, int height, Color fill){
+    _width = width;
+    _height = height;
+
+    // Allocate an array of Pixel pointers
+    // This gives the height dimension
+    _pix = new Pixel*[_height];
+    for(int i = 0; i < _height; ++i){
+        // Allocate an array of Pixel
+        // This gives the width dimension
+        _pix[i] = new Pixel[_width];
+        for(int j = 0; j < _width; ++j){
+            // Although not used anywhere
+            // we set the position of each
+            // pixel for consistency
+            _pix[i][j].setPosition(i, j);
+            _pix[i][j].setColor(fill);
+        }
+    }
+}
+
 int Image::getMaxColorVal() const{
     float maxCol = 0;
 
