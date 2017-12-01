@@ -1,3 +1,7 @@
 build
 pics
 bin
+tags
+.vscode
+output
+main

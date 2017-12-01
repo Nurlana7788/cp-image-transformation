@@ -1,6 +1,8 @@
 #include "task/task.h"
 #include "task/task5.h"
 #include "task/task7.h"
+#include "task/task8.h"
+#include "task/task6.h"
 #include "image/image.h"
 #include<iostream>
 
@@ -19,10 +21,10 @@ int main(int argv, char *argc[]){
         &defObject, // 2
         &defObject, // 3
         &defObject, // 4
-        new Task5("5_IMT2016054.ppm"), // 5
-        &defObject, // 6
-        new Task7("7_IMT2016116.ppm"), // 7
-        &defObject // 6
+        new Task5("output/5_IMT2016054.ppm"), // 5
+        new Task6("output/6_IMT2016026.ppm"), // 6
+        new Task7("output/7_IMT2016116.ppm"), // 7
+        new Task8("output/8_IMT2016077.ppm") // 6
     };
 
     int taskIdList[] = {2, 3, 5, 6, 7, 8};
@@ -39,4 +41,10 @@ int main(int argv, char *argc[]){
         taskCallables[taskIdList[i] - 1]->doneMssg();
         std::cout<<"\n\n";
     }
+
+    for(int i = 0; i < sizeof(taskCallables) / sizeof(Task*); ++i){
+        if(taskCallables[i] != &defObject) delete taskCallables[i];
+    }
+
+    return 0;
 }

@@ -5,5 +5,7 @@ add_library(
         task.cpp 
         task5.cpp
         task7.cpp
+        task6.cpp
+        task8.cpp
 )
 target_link_libraries(task image)

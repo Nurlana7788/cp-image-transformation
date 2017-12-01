@@ -7,4 +7,6 @@ add_library(
         composite_image.cpp
         brightness_histogram.cpp
         scaled_image.cpp
+        connected_components.cpp
+        noise.cpp
 )
